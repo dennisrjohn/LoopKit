@@ -407,29 +407,29 @@ extension DoseStore {
     private func validateReservoirContinuity(at date: Date? = nil) -> [Reservoir] {
         let date = date ?? currentDate()
 
-        if let insulinModel = insulinModel {
-            // Consider any entries longer than 30 minutes, or with a value of 0, to be unreliable
-            let maximumInterval = TimeInterval(minutes: 30)
-            let continuityStartDate = date.addingTimeInterval(-insulinModel.effectDuration)
+        let effectDuration = insulinModel?.effectDuration ?? .hours(6)
 
-            if  let recentReservoirObjects = try? self.getReservoirObjects(since: continuityStartDate - maximumInterval),
-                let oldestRelevantReservoirObject = recentReservoirObjects.last
-            {
-                // Verify reservoir timestamps are continuous
-                let areReservoirValuesContinuous = recentReservoirObjects.reversed().isContinuous(
-                    from: continuityStartDate,
-                    to: date,
-                    within: maximumInterval
-                )
-                
-                // also make sure prime events don't exist withing the insulin action duration
-                let primeEventExistsWithinInsulinActionDuration = (lastRecordedPrimeEventDate ?? .distantPast) >= oldestRelevantReservoirObject.startDate
+        // Consider any entries longer than 30 minutes, or with a value of 0, to be unreliable
+        let maximumInterval = TimeInterval(minutes: 30)
+        let continuityStartDate = date.addingTimeInterval(-effectDuration)
 
-                self.areReservoirValuesValid = areReservoirValuesContinuous && !primeEventExistsWithinInsulinActionDuration
-                self.lastStoredReservoirValue = recentReservoirObjects.first?.storedReservoirValue
+        if  let recentReservoirObjects = try? self.getReservoirObjects(since: continuityStartDate - maximumInterval),
+            let oldestRelevantReservoirObject = recentReservoirObjects.last
+        {
+            // Verify reservoir timestamps are continuous
+            let areReservoirValuesContinuous = recentReservoirObjects.reversed().isContinuous(
+                from: continuityStartDate,
+                to: date,
+                within: maximumInterval
+            )
 
-                return recentReservoirObjects
-            }
+            // also make sure prime events don't exist withing the insulin action duration
+            let primeEventExistsWithinInsulinActionDuration = (lastRecordedPrimeEventDate ?? .distantPast) >= oldestRelevantReservoirObject.startDate
+
+            self.areReservoirValuesValid = areReservoirValuesContinuous && !primeEventExistsWithinInsulinActionDuration
+            self.lastStoredReservoirValue = recentReservoirObjects.first?.storedReservoirValue
+
+            return recentReservoirObjects
         }
 
         self.areReservoirValuesValid = false
