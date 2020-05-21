@@ -436,6 +436,10 @@
 		89D204D221CC837A001238CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89D204D121CC837A001238CC /* Assets.xcassets */; };
 		89F53E9422B4328E0024A67C /* MutableCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CA2B33226D15E0004D9350 /* MutableCollection.swift */; };
 		89F53E9522B437570024A67C /* MutableCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CA2B33226D15E0004D9350 /* MutableCollection.swift */; };
+		962649F224759CD8008C929C /* SleepStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962649F124759CD8008C929C /* SleepStore.swift */; };
+		962649F42475A605008C929C /* StoredSleepEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962649F32475A605008C929C /* StoredSleepEntry.swift */; };
+		962649F62475A732008C929C /* CachedSleepObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962649F52475A732008C929C /* CachedSleepObject+CoreDataClass.swift */; };
+		962649F82475A7B2008C929C /* CachedSleepObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962649F72475A7B2008C929C /* CachedSleepObject+CoreDataProperties.swift */; };
 		9E78433F236653F00016C583 /* ice_35_min_none_piecewiselinear_output.json in Resources */ = {isa = PBXBuildFile; fileRef = 9E78433E236653F00016C583 /* ice_35_min_none_piecewiselinear_output.json */; };
 		9E784341236656770016C583 /* ice_35_min_partial_piecewiselinear_output.json in Resources */ = {isa = PBXBuildFile; fileRef = 9E784340236656770016C583 /* ice_35_min_partial_piecewiselinear_output.json */; };
 		9E784343236659BD0016C583 /* ice_slow_absorption_piecewiselinear_output.json in Resources */ = {isa = PBXBuildFile; fileRef = 9E784342236659BD0016C583 /* ice_slow_absorption_piecewiselinear_output.json */; };
@@ -1139,6 +1143,10 @@
 		89D2049221CC7C13001238CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89D204D121CC837A001238CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89DC540C21B75AE7005A1CE0 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		962649F124759CD8008C929C /* SleepStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepStore.swift; sourceTree = "<group>"; };
+		962649F32475A605008C929C /* StoredSleepEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredSleepEntry.swift; sourceTree = "<group>"; };
+		962649F52475A732008C929C /* CachedSleepObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedSleepObject+CoreDataClass.swift"; sourceTree = "<group>"; };
+		962649F72475A7B2008C929C /* CachedSleepObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedSleepObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9E78433E236653F00016C583 /* ice_35_min_none_piecewiselinear_output.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ice_35_min_none_piecewiselinear_output.json; sourceTree = "<group>"; };
 		9E784340236656770016C583 /* ice_35_min_partial_piecewiselinear_output.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ice_35_min_partial_piecewiselinear_output.json; sourceTree = "<group>"; };
 		9E784342236659BD0016C583 /* ice_slow_absorption_piecewiselinear_output.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ice_slow_absorption_piecewiselinear_output.json; sourceTree = "<group>"; };
@@ -1591,6 +1599,7 @@
 				437AFF22203BE382008C4892 /* Extensions */,
 				43D8FE701C7293070073BE78 /* GlucoseKit */,
 				43D8FEB21C7294520073BE78 /* InsulinKit */,
+				962649EE24759B20008C929C /* SleepKit */,
 				1F5DAB2B2118CE9300048054 /* Localizable.strings */,
 				437874B4202FDC8300A3D8B9 /* Persistence */,
 				C1814B83225B9ED5008D2D8E /* LoopNotificationCategory.swift */,
@@ -1901,6 +1910,17 @@
 				89D2046B21C83C3F001238CC /* GlucoseTrendTableViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		962649EE24759B20008C929C /* SleepKit */ = {
+			isa = PBXGroup;
+			children = (
+				962649F124759CD8008C929C /* SleepStore.swift */,
+				962649F32475A605008C929C /* StoredSleepEntry.swift */,
+				962649F52475A732008C929C /* CachedSleepObject+CoreDataClass.swift */,
+				962649F72475A7B2008C929C /* CachedSleepObject+CoreDataProperties.swift */,
+			);
+			path = SleepKit;
 			sourceTree = "<group>";
 		};
 		C18A418924281C5B00BBAF28 /* DeviceManager */ = {
@@ -2555,6 +2575,7 @@
 				43FB60E920DCBE64002B996B /* PumpManagerStatus.swift in Sources */,
 				4322B774202FA2790002837D /* CarbMath.swift in Sources */,
 				434113B120F2888100D05747 /* NSManagedObjectContext+CachedGlucoseObject.swift in Sources */,
+				962649F62475A732008C929C /* CachedSleepObject+CoreDataClass.swift in Sources */,
 				4322B78B202FA2B30002837D /* ExponentialInsulinModel.swift in Sources */,
 				89AE222F228BC68000BDFD85 /* DoseProgressTimerEstimator.swift in Sources */,
 				43D8FE011C7290350073BE78 /* NSTimeInterval.swift in Sources */,
@@ -2579,6 +2600,7 @@
 				43D8FDF41C7290350073BE78 /* BasalRateSchedule.swift in Sources */,
 				4322B788202FA2B30002837D /* DoseStore.swift in Sources */,
 				C18A419324281CAD00BBAF28 /* StoredDeviceLogEntry.swift in Sources */,
+				962649F82475A7B2008C929C /* CachedSleepObject+CoreDataProperties.swift in Sources */,
 				4303C4921E2D665000ADEDC8 /* TimeZone.swift in Sources */,
 				4322B781202FA2AF0002837D /* PumpEvent+CoreDataProperties.swift in Sources */,
 				4322B785202FA2AF0002837D /* ReservoirValue.swift in Sources */,
@@ -2597,6 +2619,7 @@
 				437AFEEE2036A156008C4892 /* CachedCarbObject+CoreDataProperties.swift in Sources */,
 				4322B772202FA2790002837D /* AbsorbedCarbValue.swift in Sources */,
 				1F5DAB1F2118C95700048054 /* LocalizedString.swift in Sources */,
+				962649F42475A605008C929C /* StoredSleepEntry.swift in Sources */,
 				C18A419624281CAD00BBAF28 /* DeviceLogEntry+CoreDataClass.swift in Sources */,
 				434113AD20F287DC00D05747 /* NSManagedObjectContext.swift in Sources */,
 				4322B77B202FA2790002837D /* StoredCarbEntry.swift in Sources */,
@@ -2608,6 +2631,7 @@
 				C18A419224281CAD00BBAF28 /* PersistentDeviceLog.swift in Sources */,
 				4322B78F202FA2B30002837D /* InsulinModel.swift in Sources */,
 				434C5F9C2098352500B2FD1A /* QuantityFormatter.swift in Sources */,
+				962649F224759CD8008C929C /* SleepStore.swift in Sources */,
 				43F503642106C78C009FA89A /* ServiceAuthentication.swift in Sources */,
 				89F53E9422B4328E0024A67C /* MutableCollection.swift in Sources */,
 				C18A419524281CAD00BBAF28 /* DeviceLogEntryType.swift in Sources */,

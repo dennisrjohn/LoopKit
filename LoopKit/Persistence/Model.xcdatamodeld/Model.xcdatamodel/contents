@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14492.1" systemVersion="18G87" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E266" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CachedCarbObject" representedClassName=".CachedCarbObject" syncable="YES">
         <attribute name="absorptionTime" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="createdByCurrentApp" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
@@ -83,6 +83,14 @@
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
+    <entity name="CachedSleepObject" representedClassName=".CachedSleepObject" syncable="YES">
+        <attribute name="endDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="syncIdentifier" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="syncVersion" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="value" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
     <entity name="DeletedCarbObject" representedClassName=".DeletedCarbObject" syncable="YES">
         <attribute name="externalID" attributeType="String" syncable="YES"/>
         <attribute name="startDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -140,5 +148,6 @@
         <element name="DeletedCarbObject" positionX="-63" positionY="90" width="128" height="90"/>
         <element name="PumpEvent" positionX="-63" positionY="18" width="128" height="225"/>
         <element name="Reservoir" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="CachedSleepObject" positionX="-63" positionY="126" width="128" height="133"/>
     </elements>
 </model>
