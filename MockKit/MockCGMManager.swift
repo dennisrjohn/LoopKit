@@ -110,7 +110,7 @@ public final class MockCGMManager: TestingCGMManager {
 
     public let managedDataInterval: TimeInterval? = nil
 
-    public let shouldSyncToRemoteService = false
+    public let shouldSyncToRemoteService = true
     
     private func logDeviceCommunication(_ message: String, type: DeviceLogEntryType = .send) {
         self.delegate.notify { (delegate) in
