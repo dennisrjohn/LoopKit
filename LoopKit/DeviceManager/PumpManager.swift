@@ -38,6 +38,8 @@ public protocol PumpManagerDelegate: DeviceManagerDelegate, PumpManagerStatusObs
 
     func pumpManager(_ pumpManager: PumpManager, hasNewPumpEvents events: [NewPumpEvent], lastReconciliation: Date?, completion: @escaping (_ error: Error?) -> Void)
 
+    func pumpManager(_ pumpManager: PumpManager, hasNewBasalRateSchedule basalRateSchedule: BasalRateSchedule, completion: @escaping (_ error: Error?) -> Void)
+
     func pumpManager(_ pumpManager: PumpManager, didReadReservoirValue units: Double, at date: Date, completion: @escaping (_ result: PumpManagerResult<(newValue: ReservoirValue, lastValue: ReservoirValue?, areStoredValuesContinuous: Bool)>) -> Void)
 
     func pumpManager(_ pumpManager: PumpManager, didAdjustPumpClockBy adjustment: TimeInterval)
