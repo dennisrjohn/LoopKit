@@ -665,6 +665,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		01B6B16C25CE16BF000BF85E /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		1F50C321212B20D300C18FAB /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/CarbKit.strings; sourceTree = "<group>"; };
 		1F50C322212B20D300C18FAB /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/InsulinKit.strings; sourceTree = "<group>"; };
 		1F50C324212B20D300C18FAB /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1522,6 +1523,7 @@
 		43D8FDC11C728FDF0073BE78 = {
 			isa = PBXGroup;
 			children = (
+				01B6B16C25CE16BF000BF85E /* Package.swift */,
 				1F5DAB1B2118C91C00048054 /* Common */,
 				430059211CCDC7A200C861EA /* Extensions */,
 				43D8FDCD1C728FDF0073BE78 /* LoopKit */,
