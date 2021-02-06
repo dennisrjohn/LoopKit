@@ -3,12 +3,16 @@ import PackageDescription
 
 let package = Package(
     name: "Shared",
+    defaultLocalization: "en",
     platforms: [
         .iOS(.v10),
     ],
     products: [
         .library(
             name: "LoopKit",
+            targets: ["Shared"]),
+        .library(
+            name: "LoopKit-watchOS",
             targets: ["Shared"]),
         .library(
             name: "LoopKitUI",
